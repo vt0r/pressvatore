@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="chrome=1">
+<meta name="HandheldFriendly" content="True">
+<meta name="MobileOptimized" content="320">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="referrer" content="no-referrer">
+<meta name="author" content="SALVATORE LAMENDOLA (vt0r)">
+<meta name="description" content="UPDATE 2013-02-27: I have added some basic file size checking to these functions, so you should re-add them to ~/.bashrc !This should be a short and sweet posting since the extremely long title basically sums it up.
+So, if you&rsquo;re reading this, it&rsquo;s likely you&rsquo;re at least fairly technically-inclined (unless you&rsquo;re using Ubuntu, in which case it could go either way). Based on that assumption, I&rsquo;ll go straight into the details.">
+
+<meta property="og:title" content="Properly Burning XGD3 (and XGD2) Backups in Linux Using Growisofs and iXtreme Burner Max" />
+<meta property="og:description" content="UPDATE 2013-02-27: I have added some basic file size checking to these functions, so you should re-add them to ~/.bashrc !This should be a short and sweet posting since the extremely long title basically sums it up.
+So, if you&rsquo;re reading this, it&rsquo;s likely you&rsquo;re at least fairly technically-inclined (unless you&rsquo;re using Ubuntu, in which case it could go either way). Based on that assumption, I&rsquo;ll go straight into the details." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://lamendola.me/2012/04/29/properly-burning-xgd3-and-xgd2-backups-in-linux-using-growisofs-and-ixtreme-burner-max/" />
+<meta property="article:published_time" content="2012-04-29T22:38:32+00:00" />
+<meta property="article:modified_time" content="2012-04-29T22:38:32+00:00" />
+
+
+<title>
+
+
+     Properly Burning XGD3 (and XGD2) Backups in Linux Using Growisofs and iXtreme Burner Max 
+
+</title>
+<link rel="canonical" href="https://lamendola.me/2012/04/29/properly-burning-xgd3-and-xgd2-backups-in-linux-using-growisofs-and-ixtreme-burner-max/">
+
+
+
+
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.11.0/styles/solarized-dark.min.css">
+
+
+
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,700|Ubuntu+Mono:400,400i,700,700i|Source+Sans+Pro:400">
+
+
+
+    <link rel="stylesheet" href="/css/reset.css">
+    <link rel="stylesheet" href="/css/pygments.css">
+    <link rel="stylesheet" href="/css/main.css">
+    
+
+
+
+
+<link rel="shortcut icon"
+
+    href="/images/favicon.ico"
+
+>
+
+
+
+
+
+
+
+
+</head>
+
+
+<body lang="en">
+
+<section class="header">
+    <div class="container">
+        <div class="content">
+            
+                
+                
+                
+                
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                
+                <a href="/"><img class="avatar" src="/images/avatar@2x.png" srcset="https://lamendola.me/images/avatar@2x.png 1x"></a>
+            
+            <a href="/"><div class="name">SALVATORE LAMENDOLA (vt0r)</div></a>
+            
+            <nav>
+                <ul>
+                    
+                        <li class="nav-"><a href="https://lamendola.me/about/"><span>About</span></a></li>
+                    
+                        <li class="nav-blog"><a href="https://lamendola.me/blog/"><span>Blog</span></a></li>
+                    
+                        <li class="nav-"><a href="https://ip.lamendola.me/"><span>What&#39;s my IP?</span></a></li>
+                    
+                        <li class="nav-"><a href="https://1a4.fr/"><span>Encrypted Pastebin</span></a></li>
+                    
+                </ul>
+            </nav>
+        </div>
+    </div>
+</section>
+
+<section class="icons">
+    <div class="container">
+        <div class="content">
+        
+            <a href="https://github.com/vt0r" target="_blank" rel="noopener"><img class="icon" src="/img/github.svg" alt="github" /></a>
+        
+
+        
+
+        
+
+	
+            <a href="https://keybase.io/vt0r" target="_blank" rel="noopener"><img class="icon" src="/img/keybase.svg" alt="keybase" /></a>
+	
+
+        
+
+        
+
+        
+            <a href="https://www.linkedin.com/in/salvatorelamendola" target="_blank" rel="noopener"><img class="icon" src="/img/linkedin.svg" alt="linkedin" /></a>
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+            <a href="mailto:salvatore[at@@]lamendola[dot..]me"><img class="icon" src="/img/email.svg" alt="email" /></a>
+        
+
+        
+
+        
+        </div>
+    </div>
+</section>
+
+
+<section class="main post non-narrow zero-top-spacing">
+    <div class="container">
+        <div class="content">
+            <div class="front-matter">
+                <div class="title-container">
+                    <div class="page-heading">
+
+    Properly Burning XGD3 (and XGD2) Backups in Linux Using Growisofs and iXtreme Burner Max
+
+</div>
+
+                    <div class="initials"><a href="https://lamendola.me"></a></div>
+                </div>
+                <div class="meta">
+                    
+                    <div class="date" title='Sun Apr 29 2012 22:38:32 UTC'>Apr 29, 2012</div>
+                    
+                    
+		    <div class="reading-time"><div class="middot"></div>2 minutes read</div>
+                    
+                </div>
+            </div>
+            <div class="markdown">
+                <p><!-- raw HTML omitted -->UPDATE 2013-02-27: I have added some basic file size checking to these functions, so you should re-add them to ~/.bashrc !<!-- raw HTML omitted --></p>
+<p>This should be a short and sweet posting since the extremely long title basically sums it up.</p>
+<p>So, if you&rsquo;re reading this, it&rsquo;s likely you&rsquo;re at least fairly technically-inclined (unless you&rsquo;re using Ubuntu, in which case it could go either way). Based on that assumption, I&rsquo;ll go straight into the details.</p>
+<p>You will obviously need to have c4eva&rsquo;s excellent iXtreme Burner Max firmware installed on your Liteon iHAS x24-series burner and will also need growisofs installed. To make it simpler, I&rsquo;ve always written a small function for burning the games, since in the past it required using many command-line options and I&rsquo;m lazy. So here are the functions you should add to your ~/.bashrc:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#66d9ef">function</span> burnx360iso_xgd3<span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
+    <span style="color:#66d9ef">if</span> <span style="color:#f92672">[</span> <span style="color:#e6db74">`</span>stat -c%s <span style="color:#e6db74">&#34;</span>$1<span style="color:#e6db74">&#34;</span><span style="color:#e6db74">`</span> -lt <span style="color:#ae81ff">8738846720</span> <span style="color:#f92672">]</span>
+    <span style="color:#66d9ef">then</span>
+        echo <span style="color:#e6db74">&#34;This is most likely not an XGD3 image. Use burnx360iso_xgd2 instead.&#34;</span>
+    <span style="color:#66d9ef">else</span>
+        growisofs -use-the-force-luke<span style="color:#f92672">=</span>break:2133520 -speed<span style="color:#f92672">=</span><span style="color:#ae81ff">4</span> -Z /dev/sr0<span style="color:#f92672">=</span>$1 ;
+    <span style="color:#66d9ef">fi</span>
+<span style="color:#f92672">}</span>
+
+<span style="color:#66d9ef">function</span> burnx360iso_xgd2<span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
+    <span style="color:#66d9ef">if</span> <span style="color:#f92672">[</span> <span style="color:#e6db74">`</span>stat -c%s <span style="color:#e6db74">&#34;</span>$1<span style="color:#e6db74">&#34;</span><span style="color:#e6db74">`</span> -eq <span style="color:#ae81ff">8738846720</span> <span style="color:#f92672">]</span>
+    <span style="color:#66d9ef">then</span>
+        echo <span style="color:#e6db74">&#34;This looks like an XGD3 image to me. Use burnx360iso_xgd3 instead.&#34;</span>
+    <span style="color:#66d9ef">else</span>
+        growisofs -use-the-force-luke<span style="color:#f92672">=</span>dao -use-the-force-luke<span style="color:#f92672">=</span>break:1913760 -dvd-compat -speed<span style="color:#f92672">=</span><span style="color:#ae81ff">4</span> -Z /dev/sr0<span style="color:#f92672">=</span>$1 ;
+    <span style="color:#66d9ef">fi</span>
+<span style="color:#f92672">}</span>
+</code></pre></div><p>There is a slight chance you&rsquo;ll experience an error when using the <code>-dvd-compat</code> and <code>-use-the-force-luke=dao</code> options with XGD2 backups, in which case you should just remove that option. Very simple. Speaking of simple, here&rsquo;s the usage (same for both):</p>
+<!-- raw HTML omitted -->
+
+                <br>
+                
+                <p class="back-to-posts"><a href="/blog">Back to posts</a></p>
+            </div>
+            <br>
+            <div class="disqus">
+                
+            </div>
+            
+        </div>
+    </div>
+</section>
+
+
+
+
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.11.0/highlight.min.js"></script>
+  
+
+  <script type="text/javascript">
+    hljs.initHighlightingOnLoad();
+  </script>
+
+
+
+
+
+</body>
+</html>
+

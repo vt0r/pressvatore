@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Sitevatore</title>
+    <link>https://lamendola.me/</link>
+    <description>Recent content on Sitevatore</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 09 Oct 2015 00:12:03 +0000</lastBuildDate>
+    
+	<atom:link href="https://lamendola.me/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Please Stop curl/wget&#39;ing Directly to bash/sh</title>
+      <link>https://lamendola.me/2015/10/09/please-stop-curl-wgeting-directly-to-bash-sh/</link>
+      <pubDate>Fri, 09 Oct 2015 00:12:03 +0000</pubDate>
+      
+      <guid>https://lamendola.me/2015/10/09/please-stop-curl-wgeting-directly-to-bash-sh/</guid>
+      <description>Today, we are going to discuss the dangers of sending the output of a curl or wget command directly to your shell. There are already a few examples on why this is dangerous, with a very clear and concise example available herethat explains the dangers of connections closing or failing before the transfer is completed. However, I would like to present a much more malicious example. Sinister, even! I call it &amp;ldquo;The Bait-and-Switch.</description>
+    </item>
+    
+    <item>
+      <title>Recommended Nginx SSL/TLS Settings</title>
+      <link>https://lamendola.me/2014/06/06/recommended-nginx-ssl-settings/</link>
+      <pubDate>Fri, 06 Jun 2014 16:24:10 +0000</pubDate>
+      
+      <guid>https://lamendola.me/2014/06/06/recommended-nginx-ssl-settings/</guid>
+      <description>UPDATE: 2019-01-30 - Added TLSv1.3 recommend ciphers, as I&amp;rsquo;ve enabled the OpenSSL 1.1.1 SRU on some Ubuntu 18.04 machines and successfully verified it works as expected. Also added another XSS prevention header.
+ Have you seen the recent (and not so recent) OpenSSL/TLS protocol vulnerabilities, and are you worried about securing connections to the Nginx servers you manage?
+I&amp;rsquo;m going to assume you answered &amp;ldquo;yes&amp;rdquo; to that question, as it&amp;rsquo;s unlikely you&amp;rsquo;d end up on this page otherwise.</description>
+    </item>
+    
+    <item>
+      <title>Generating Random Passwords in Perl</title>
+      <link>https://lamendola.me/2013/04/28/generating-random-passwords-in-perl/</link>
+      <pubDate>Sun, 28 Apr 2013 21:19:40 +0000</pubDate>
+      
+      <guid>https://lamendola.me/2013/04/28/generating-random-passwords-in-perl/</guid>
+      <description>Though I&amp;rsquo;ve already created the same thing in another postusing a Bash function, I had a very important need for a Perl script that produced random strings. Once I got that little script working, I decided to rewrite the original Bash password generator function entirely in Perl. This may not be the most efficient way to hack it up, but I&amp;rsquo;m no Perl monger, so don&amp;rsquo;t expect perfection. This script does work well, however, and requires no additional modules, so it can be run anywhere there is a Perl interpreter.</description>
+    </item>
+    
+    <item>
+      <title>Generating Random Passwords in Bash Using Your System&#39;s Random Source</title>
+      <link>https://lamendola.me/2012/07/05/generating-random-passwords-using-your-systems-random-source/</link>
+      <pubDate>Thu, 05 Jul 2012 09:30:21 +0000</pubDate>
+      
+      <guid>https://lamendola.me/2012/07/05/generating-random-passwords-using-your-systems-random-source/</guid>
+      <description>Today, we will re-invent the wheel with a simple bash function to generate some passwords and a few hashes as well. Why would I bother coding something when several good programs already exist to perform the same functionality? Well, that&amp;rsquo;s simple: I use this most on systems where I cannot install software. Any user that has SSH access can edit their own .bashrc , so I decided since random password generation is a daily task I perform at my job and elsewhere, it made sense to have a good way to generate passwords.</description>
+    </item>
+    
+    <item>
+      <title>Getting Juniper Network Connect to Work on 64-bit Linux</title>
+      <link>https://lamendola.me/2012/06/05/getting-juniper-network-connect-to-work-on-64-bit-linux/</link>
+      <pubDate>Tue, 05 Jun 2012 21:37:40 +0000</pubDate>
+      
+      <guid>https://lamendola.me/2012/06/05/getting-juniper-network-connect-to-work-on-64-bit-linux/</guid>
+      <description>So let&amp;rsquo;s say you&amp;rsquo;ve got a Juniper MAG or SRX or similar unit at work that supports SSL VPN. Now let&amp;rsquo;s say you&amp;rsquo;re running 64-bit Linux at home and need to connect to said VPN. I doubt it makes much difference which distro you use, but I&amp;rsquo;m going to assume you&amp;rsquo;re really cool and are using a Debian-based one. So there are a few necessary steps required to get this Java-based VPN client running, and if you follow this tutorial, you&amp;rsquo;ll have it working in no time.</description>
+    </item>
+    
+    <item>
+      <title>Using Heartbeat to Share a Single Virtual IP (VIP) Between Two Servers</title>
+      <link>https://lamendola.me/2012/05/05/using-heartbeat-to-share-a-single-virtual-ip-vip-between-two-servers/</link>
+      <pubDate>Sat, 05 May 2012 10:45:08 +0000</pubDate>
+      
+      <guid>https://lamendola.me/2012/05/05/using-heartbeat-to-share-a-single-virtual-ip-vip-between-two-servers/</guid>
+      <description>Just did a high availability cluster setup a few weeks ago and though the web servers use the traditional heartbeat/ldirectord setup, there needed to be high availability between the two master/master database servers as well.
+Yes, this can be done with ldirectord for MySQL, but if you also have other services like Memcached, or Redis, etc, you may just want to share a VIP between the servers.
+This is especially true if you&amp;rsquo;re connecting to these servers internally.</description>
+    </item>
+    
+    <item>
+      <title>HTTPS All Over The Place</title>
+      <link>https://lamendola.me/2012/04/30/https-all-over-the-place/</link>
+      <pubDate>Mon, 30 Apr 2012 22:19:27 +0000</pubDate>
+      
+      <guid>https://lamendola.me/2012/04/30/https-all-over-the-place/</guid>
+      <description>Here are some extremely simple security enhancers that have been around for a while, but are still worth mentioning nonetheless.
+First on the list is HTTPS Everywhere.
+This is an awesome add-on for Firefox (stable) and Chrome (beta) which has auto-updating rules to automatically negotiate HTTPS on sites that support it. And, no it&amp;rsquo;s not the 90&amp;rsquo;s anymore, so you don&amp;rsquo;t have to worry about SSL (really TLS nowadays) slowing your browsing down.</description>
+    </item>
+    
+    <item>
+      <title>Properly Burning XGD3 (and XGD2) Backups in Linux Using Growisofs and iXtreme Burner Max</title>
+      <link>https://lamendola.me/2012/04/29/properly-burning-xgd3-and-xgd2-backups-in-linux-using-growisofs-and-ixtreme-burner-max/</link>
+      <pubDate>Sun, 29 Apr 2012 22:38:32 +0000</pubDate>
+      
+      <guid>https://lamendola.me/2012/04/29/properly-burning-xgd3-and-xgd2-backups-in-linux-using-growisofs-and-ixtreme-burner-max/</guid>
+      <description>UPDATE 2013-02-27: I have added some basic file size checking to these functions, so you should re-add them to ~/.bashrc !This should be a short and sweet posting since the extremely long title basically sums it up.
+So, if you&amp;rsquo;re reading this, it&amp;rsquo;s likely you&amp;rsquo;re at least fairly technically-inclined (unless you&amp;rsquo;re using Ubuntu, in which case it could go either way). Based on that assumption, I&amp;rsquo;ll go straight into the details.</description>
+    </item>
+    
+  </channel>
+</rss>

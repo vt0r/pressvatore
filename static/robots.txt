@@ -1,0 +1,4 @@
+# robots.txt for https://lamendola.me/
+
+User-agent: *
+Disallow:

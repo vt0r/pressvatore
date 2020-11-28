@@ -1,0 +1,3 @@
+[submodule "themes/cocoavatore"]
+	path = themes/cocoavatore
+	url = https://github.com/vt0r/cocoa-hugo-theme.git
