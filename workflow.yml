@@ -1,0 +1,6 @@
+- name: Hugo to GH Pages
+  uses: chabad360/hugo-gh-pages@v2
+  with:
+    cname: lamendola.me
+    branch: main
+    repo: vt0r/vt0r.github.io
