@@ -15,6 +15,7 @@ jobs:
         with:
           submodules: true
       - name: Hugo to GH Pages
+        githubToken: ${{ secrets.PERSONAL_TOKEN }}
         uses: chabad360/hugo-gh-pages@v2
         with:
           cname: lamendola.me
