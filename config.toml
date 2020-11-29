@@ -59,7 +59,7 @@ disablePathToLower = true
 [[menu.main]]
   name = "What's my IP?"
   weight = 100
-  url = "https://ip.lamendola.me/"
+  url = "https://ip.1a4.fr/"
 
 [[menu.main]]
   name = "Encrypted Pastebin"
