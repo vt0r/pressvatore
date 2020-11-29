@@ -11,17 +11,17 @@ Today, we are going to discuss the dangers of sending the output of a curl or wg
   
 Though this is certainly nothing groundbreaking or even new, this proof of concept is what I hope will end this ridiculous trend of piping downloaded scripts directly to your shell once and for all.
   
-Take the following URL, for example: <a href="https://lamendola.me/speedtest/" target="_blank">https://lamendola.me/speedtest/</a>
+Take the following URL, for example: <a href="https://1a4.fr/speedtest/" target="_blank">https://1a4.fr/speedtest/</a>
   
 In your browser, the above URL shows a perfectly functional bash script you can use to do some CLI speed tests from DigitalOcean test machines in each of their datacenters. This script will download a 100 MB test file to show basic throughput expectations, and then it will measure the average latency with a series of pings to each test machine. This script by itself is actually quite useful to someone on DigitalOcean or someone considering which datacenter(s) to use in a new setup.
   
 Now, let's try to grab the same exact URL using `curl` or `wget` (but **NOT** piping to bash):
   
 ``` bash
-curl https://lamendola.me/speedtest/
+curl https://1a4.fr/speedtest/
 ```
 ``` bash
-wget -O- https://lamendola.me/speedtest/
+wget -O- https://1a4.fr/speedtest/
 ```
   
 What kind of sourcery is this, you ask? Well, let's just go straight into the explanation. Like I mentioned in the introduction, we wanted to show what happens when there's true malicious intent on the server side. To demonstrate this, a friend and I decided to implement two separate proof of concept solutions to achieve the same bait-and-switch end result. We'll first show his example, written in PHP (he has chosen to remain nameless so you don't associate him with PHP):
