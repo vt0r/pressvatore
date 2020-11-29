@@ -19,5 +19,4 @@ jobs:
         with:
           githubToken: ${{ secrets.PERSONAL_TOKEN }}
           cname: lamendola.me
-          branch: main
           repo: vt0r/vt0r.github.io
