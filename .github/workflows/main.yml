@@ -1,6 +1,22 @@
-name: Hugo to GH Pages
-uses: chabad360/hugo-gh-pages@v2
-with:
-  cname: lamendola.me
-  branch: main
-  repo: vt0r/vt0r.github.io
+name: Publish Site
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repo
+        uses: actions/checkout@main
+        with:
+          submodules: true
+      - name: Hugo to GH Pages
+        uses: chabad360/hugo-gh-pages@v2
+        with:
+          cname: lamendola.me
+          branch: main
+          repo: vt0r/vt0r.github.io
