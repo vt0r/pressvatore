@@ -1,3 +1,6 @@
 [submodule "themes/cocoavatore"]
 	path = themes/cocoavatore
 	url = https://github.com/vt0r/cocoa-hugo-theme.git
+[submodule "static/diceware"]
+	path = static/diceware
+	url = https://github.com/grempe/diceware.git
