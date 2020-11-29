@@ -12,9 +12,14 @@ disablePathToLower = true
 [permalinks]
   blog = "blog/:slug/"
 
-[blackfriday]
+[markup]
+  [markup.highlight]
+    style = "solarized-dark"
+    tabWidth = 2
+
+#[blackfriday]
   #plainIDAnchors = true
-  hrefTargetBlank = true
+  #hrefTargetBlank = true
 
 [params]
   #twitter = "https://twitter.com/yourtwitterusername"
@@ -37,9 +42,9 @@ disablePathToLower = true
   keybase = "https://keybase.io/vt0r"
   noshowreadtime = false # if true, don't show "<x> minutes read" in posts
   selfintro = "" # appears in the site header when set to a non-empty string
-  highlightjs = true
-  # highlightjslanguages = ["go"] # additional languages not included in the "common" set
-  highlightjsStyle = "solarized-dark"
+  #highlightjs = true
+  #highlightjslanguages = ["go"] # additional languages not included in the "common" set
+  #highlightjsStyle = "solarized-dark"
   avatar = "images/avatar@2x.png"
 
 
