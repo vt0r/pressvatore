@@ -6,7 +6,7 @@ title: Recommended Nginx SSL/TLS Settings
 url: /2014/06/06/recommended-nginx-ssl-settings/
 ---
 
-**UPDATE: 2019-01-30** - Added TLSv1.3 recommend ciphers, as I've enabled the OpenSSL 1.1.1 SRU on some Ubuntu 18.04 machines and successfully verified it works as expected. Also added another XSS prevention header.
+**UPDATE: 2019-01-30** - Added TLSv1.3 recommend ciphers. Also added another XSS prevention header.
 
 ---
 
@@ -48,7 +48,7 @@ add_header X-Content-Type-Options nosniff;
 add_header X-XSS-Protection "1; mode=block";
 ```
 
-As you can verify by [checking lamendola.me on the SSL Labs test site](https://www.ssllabs.com/ssltest/analyze.html?d=lamendola.me), these configuration options, combined with the latest stable versions of OpenSSL and Nginx, score an A+ while still allowing nearly all modern browsers that support TLS1.2 and up (and ECDH) to connect.
+As you can verify by [checking 1a4.fr on the SSL Labs test site](https://www.ssllabs.com/ssltest/analyze.html?d=1a4.fr), these configuration options, combined with the latest stable versions of OpenSSL and Nginx, score an A+ while still allowing nearly all modern browsers that support TLS1.2 and up (and ECDH) to connect.
 
 Some of the above options will not work in older versions of Nginx, and they've been marked with comments to give an idea of which versions are capable of using them.
 
