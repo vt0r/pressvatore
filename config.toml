@@ -6,17 +6,17 @@ languageCode = "en-us"
 title = "Sitevatore"
 theme = "cocoavatore"
 disablePathToLower = true
-# pygmentsuseclasses = true
+pygmentsuseclasses = true
 
 [permalinks]
   blog = "blog/:slug/"
 
-[markup]
-  [markup.highlight]
-    codeFences = true
-    noClasses = true
-    style = "solarized-dark"
-    tabWidth = 2
+#[markup]
+#  [markup.highlight]
+#    codeFences = true
+#    noClasses = true
+#    style = "solarized-dark"
+#    tabWidth = 2
 
 [params]
   #twitter = "https://twitter.com/yourtwitterusername"
