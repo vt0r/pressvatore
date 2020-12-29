@@ -11,12 +11,8 @@ pygmentsuseclasses = true
 [permalinks]
   blog = "blog/:slug/"
 
-#[markup]
-#  [markup.highlight]
-#    codeFences = true
-#    noClasses = true
-#    style = "solarized-dark"
-#    tabWidth = 2
+[markup.goldmark.renderer]
+  unsafe = true
 
 [params]
   #twitter = "https://twitter.com/yourtwitterusername"
