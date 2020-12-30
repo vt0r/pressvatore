@@ -11,7 +11,7 @@ Today, we are going to discuss the dangers of sending the output of a curl or wg
   
 Though this is certainly nothing groundbreaking or even new, this proof of concept is what I hope will end this ridiculous trend of piping downloaded scripts directly to your shell once and for all.
   
-Take the following URL, for example: <a href="https://1a4.fr/speedtest/" target="_blank">https://1a4.fr/speedtest/</a>
+Take the following URL, for example: <a href="https://1a4.fr/speedtest/" target="_blank">https&#58;//1a4.fr/speedtest/</a>
   
 In your browser, the above URL shows a perfectly functional bash script you can use to do some CLI speed tests from DigitalOcean test machines in each of their datacenters. This script will download a 100 MB test file to show basic throughput expectations, and then it will measure the average latency with a series of pings to each test machine. This script by itself is actually quite useful to someone on DigitalOcean or someone considering which datacenter(s) to use in a new setup.
   
