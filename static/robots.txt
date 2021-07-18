@@ -1,5 +1,5 @@
-# robots.txt for https://lamendola.me/
+# robots.txt for https://lamendo.la/
 
 User-agent: *
 Disallow:
-Sitemap: https://lamendola.me/sitemap.xml
+Sitemap: https://lamendo.la/sitemap.xml

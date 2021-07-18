@@ -6,7 +6,7 @@ title: Generating Random Passwords in Perl
 url: /2013/04/28/generating-random-passwords-in-perl/
 ---
 
-Though I've already created <a href="https://lamendola.me/2012/07/05/generating-random-passwords-using-your-systems-random-source/">the same thing in another post</a> using a Bash function, I had a very important need for a Perl script that produced random strings. Once I got that little script working, I decided to rewrite the original Bash password generator function entirely in Perl. This may not be the most efficient way to hack it up, but I'm no Perl monger, so don't expect perfection. This script does work well, however, and requires no additional modules, so it can be run anywhere there is a Perl interpreter.
+Though I've already created <a href="https://lamendo.la/2012/07/05/generating-random-passwords-using-your-systems-random-source/">the same thing in another post</a> using a Bash function, I had a very important need for a Perl script that produced random strings. Once I got that little script working, I decided to rewrite the original Bash password generator function entirely in Perl. This may not be the most efficient way to hack it up, but I'm no Perl monger, so don't expect perfection. This script does work well, however, and requires no additional modules, so it can be run anywhere there is a Perl interpreter.
 
 ```perl
 #!/usr/bin/perl -w

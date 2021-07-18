@@ -1,5 +1,5 @@
 # Top-level site settings
-baseurl = "https://lamendola.me"
+baseurl = "https://lamendo.la"
 builddrafts = false
 author = "Salvatore LaMendola"
 languageCode = "en-us"
