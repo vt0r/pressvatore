@@ -33,6 +33,7 @@ pygmentsuseclasses = true
   lang = "en"
   linkedin = "https://www.linkedin.com/in/salvatorelamendola"
   #keybase = "https://keybase.io/blah" ## Deleted
+  mastodon = "https://noc.social/@vt0r"
   noshowreadtime = false # if true, don't show "<x> minutes read" in posts
   selfintro = "" # appears in the site header when set to a non-empty string
   avatar = "images/avatar@2x.png"
