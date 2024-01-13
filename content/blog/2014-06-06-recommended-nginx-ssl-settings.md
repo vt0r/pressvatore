@@ -6,6 +6,7 @@ title: Recommended Nginx SSL/TLS Settings
 url: /2014/06/06/recommended-nginx-ssl-settings/
 ---
 
+**UPDATE: 2024-01-12** - Defaulted to TLSv1.3 and newer OpenSSL options, but left older recommendations commented, just in case.
 **UPDATE: 2019-01-30** - Added TLSv1.3 recommend ciphers. Also added another XSS prevention header.
 
 ---
@@ -20,21 +21,21 @@ Here is an example configuration template that should support _most_ browsers cu
 
 ```nginx
 ## HTTPS globals
-ssl_protocols             TLSv1.2;
+ssl_protocols             TLSv1.2 TLSv1.3;
 # Comment the above line and uncomment
-# below one for nginx versions >= 1.13.0
-#ssl_protocols             TLSv1.2 TLSv1.3;
-ssl_ciphers               ECDHE-RSA-AES256-GCM-SHA384:ECDHE-RSA-AES128-GCM-SHA256:ECDHE-RSA-AES256-SHA384;
-# Comment the above line and uncomment
-# below one for OpenSSL versions >= 1.1.1
-#ssl_ciphers               TLS_CHACHA20_POLY1305_SHA256:TLS_AES_256_GCM_SHA384:TLS_AES_128_GCM_SHA256:ECDHE-ECDSA-CHACHA20-POLY1305:ECDHE-RSA-CHACHA20-POLY1305:ECDHE-RSA-AES256-GCM-SHA384:ECDHE-RSA-AES128-GCM-SHA256;
+# below two (2) for nginx versions older than 1.13.0
+#ssl_protocols             TLSv1.2;
+#ssl_ciphers               ECDHE-RSA-AES256-GCM-SHA384:ECDHE-RSA-AES128-GCM-SHA256:ECDHE-RSA-AES256-SHA384;
+# Uncomment the above one line and uncomment
+# below one for OpenSSL versions older than 1.1.1
+ssl_ciphers               TLS_CHACHA20_POLY1305_SHA256:TLS_AES_256_GCM_SHA384:TLS_AES_128_GCM_SHA256:ECDHE-ECDSA-CHACHA20-POLY1305:ECDHE-RSA-CHACHA20-POLY1305:ECDHE-RSA-AES256-GCM-SHA384:ECDHE-RSA-AES128-GCM-SHA256;
 ssl_prefer_server_ciphers on;
-ssl_dhparam               /path/to/dh4096.pem; # >2048-bits recommended
+ssl_dhparam               /path/to/dh2048.pem; # >=2048-bits recommended
 ssl_session_cache         shared:SSL:10m;
 ssl_session_timeout       10m;
 ssl_session_tickets       off;           # Requires nginx >= 1.5.9
 ssl_ecdh_curve            secp384r1;     # Requires nginx >= 1.1.0
-resolver                  1.1.1.1 4.2.2.1 valid=300s;
+resolver                  1.1.1.1 9.9.9.9 valid=300s;
 resolver_timeout          5s;
 ssl_stapling              on;            # Requires nginx >= 1.3.7
 ssl_stapling_verify       on;            # Requires nginx >= 1.3.7
